@@ -1,0 +1,31 @@
+interface VoiceAssistant {
+    void respond();
+}
+
+interface ChatAssistant {
+    void respond();
+}
+
+class SmartAssistant implements VoiceAssistant, ChatAssistant {
+    @Override
+    public void respond() {
+        System.out.println("SmartAssistant is responding intelligently in both voice and text.");
+    }
+
+    public void respondAsVoice() {
+        System.out.println("Responding as a voice assistant...");
+    }
+
+    public void respondAsChat() {
+        System.out.println("Responding as a chat assistant...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SmartAssistant assistant = new SmartAssistant();
+        assistant.respond();
+        assistant.respondAsVoice();
+        assistant.respondAsChat();
+    }
+}
